@@ -1,0 +1,26 @@
+pragma solidity ^0.5.15;
+
+contract Registration{
+    struct Student{
+        string name;
+        uint256 rollNo;
+    }
+    
+    //uint256[] rollNos;
+    
+    Student[] public students;
+    
+    function registerNow(string memory _name, uint256 _rollNo) public  {
+        students.push(
+            Student({
+                name: _name,
+                rollNo: _rollNo
+            })
+        );
+    }
+    
+    function getNumberOfStudents() public view returns (uint256){
+        return students.length;
+    }
+    
+}0x5630ee5f247Bd6B61991FBB2f117bBEb45990876
